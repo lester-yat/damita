@@ -1627,7 +1627,7 @@ body {
   /* Estilos para dispositivos móviles */
 
   .paper-content {
-    padding: 15px;
+    padding: 20px;
   }
 
   .title {
@@ -1636,7 +1636,7 @@ body {
   }
 
   .message {
-    font-size: 0.95em;
+    font-size: 0.85em;
     font-weight: 500;
   }
 
