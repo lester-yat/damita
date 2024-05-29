@@ -24,5 +24,22 @@ document.querySelector('.envelope').addEventListener('click', function(){
 
   document.addEventListener("DOMContentLoaded", function() {
     var audio = document.getElementById("audio");
-    audio.play();
+    
+    // Función para reiniciar la reproducción del audio cuando termina
+    function restartAudio() {
+      audio.currentTime = 0; // Reiniciar al inicio
+      audio.play(); // Reproducir el audio
+    }
+  
+    // Reproducir audio cuando el usuario haga clic en algún lugar de la página
+    document.addEventListener('click', function() {
+      restartAudio(); // Iniciar la reproducción del audio
+      
+      // Eliminar el evento de clic después de reproducir el audio para evitar repeticiones
+      document.removeEventListener('click', arguments.callee);
+    });
+  
+    // Reiniciar la reproducción cuando el audio termina
+    audio.addEventListener('ended', restartAudio);
   });
+  
